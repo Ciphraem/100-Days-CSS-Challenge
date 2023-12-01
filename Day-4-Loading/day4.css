@@ -1,0 +1,137 @@
+/* delete the following line if no text is used
+ edit the line if you wanna use other fonts */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+/* use only the available space inside the 400x400 frame */
+.frame {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    margin-top: -200px;
+    margin-left: -200px;
+    border-radius: 2px;
+        box-shadow: 4px 8px 16px 0 rgba(0, 0, 0, 0.5);
+        overflow: hidden;
+    background: #380F5A;
+    color: #333;
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+}
+
+.center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    color: white;
+}
+
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(175, 171, 48, 0.8);
+    box-shadow: 5px 5px 10px 2px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    color: black;
+}
+
+/* here, I learned the lesson that if you put a transform in animate, it overrides every transform you've made previously. Took me a long time to find out why my circles weren't positioning properly when animated */
+
+#big-circle {
+    top: -50px;
+    left: -50px;
+
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    animation: big-bounce 4s cubic-bezier(.49,.02,.31,1.01) infinite both;
+}
+
+#mid-circle {
+    top: -34px;
+    left: -34px;
+
+    z-index: 2;
+    width: 68px;
+    height: 68px;
+    animation: mid-bounce 4s cubic-bezier(.49,.02,.31,1.01) infinite both;
+}
+
+#small-circle {
+    top: -18px;
+    left: -18px;
+
+    z-index: 3;
+    width: 35px;
+    height: 35px;
+    animation: small-bounce 4s cubic-bezier(.49,.02,.31,1.01) infinite both;
+}
+
+/* learned more about animation thanks to the previous challenge =) */
+
+@keyframes big-bounce {
+    0% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1);
+    }
+
+    65% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(0%);
+    }
+}
+
+@keyframes mid-bounce {
+    0%, 10% {
+        transform: scale(0%);
+    }
+
+    45% {
+        transform: scale(100%);
+    }
+
+    55% {
+        transform: scale(100%);
+    }
+
+    60% {
+        transform: scale(1.1);
+    }
+
+    90%, 100% {
+        transform: scale(0%);
+    }
+}
+
+@keyframes small-bounce {
+    0%, 20% {
+        transform: scale(0%);
+    }
+
+    50% {
+        transform: scale(100%);
+    }
+
+    55% {
+        transform: scale(1.1);
+    }
+
+    80%, 100% {
+        transform: scale(0%);
+    }
+}

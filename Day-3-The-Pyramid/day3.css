@@ -1,0 +1,196 @@
+/*delete the following line if no text is used
+// edit the line if you wanna use other fonts*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:700,300);
+
+/*use only the available space inside the 400x400 frame*/
+.frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  height: 400px;
+  margin-top: -200px;
+  margin-left: -200px;
+  border-radius: 2px;
+	box-shadow: 4px 8px 16px 0 rgba(0,0,0,0.1);
+	overflow: hidden;
+  background: #fff;
+  color: #333;
+	font-family: 'Open Sans', Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background-color: #272c34;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+#viewport {
+    margin: auto;
+    width: 175px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    background-color: #73cbe5;
+		clip-path: circle();
+    animation: dayToNight 4s cubic-bezier(.46,.01,.54,1) infinite;
+}
+
+#sun {
+	position: absolute;
+	top: 8px;
+	left: 70px;
+	width: 40px;
+	aspect-ratio: 1/1;
+	background-color: rgba(255, 239, 0, 0.2);
+	border-radius: 50%;
+    transform-origin: 50% 350%;
+    animation: sunUpDown 4s cubic-bezier(.46,.01,.54,1) infinite;
+}
+
+#sand {
+	height: 60px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background-color: #f0de75; 
+	animation: sand-animation 4s cubic-bezier(.46,.01,.54,1) infinite;
+}
+
+@keyframes sand-animation {
+    0% {
+      background: #272c34;
+    }
+      
+      30% {
+          background: #f0de75;
+      }
+      
+      70% {
+          background: #f0de75;
+      }
+  
+    100% {
+      background: #272C34;
+    }
+  }
+
+.pyramid {
+	background-color: #e2dfdf;
+	position: absolute;
+	top: -59px;
+	left: 20%;
+	width: 110px;
+	height: 60px;
+}
+
+#shadow{
+		position: absolute;
+		top: 0%;
+		left: -45%;
+		height: 60px;
+		width: 300px;
+		background: #BDB064;
+	transform-origin: 50% 0%;
+	clip-path: polygon(38% 0%, 75% 0%, 80% 50%);
+	animation: pyramid_shadow 4s cubic-bezier(.46,.01,.54,1) infinite;
+}
+
+@keyframes pyramid_shadow {
+    0% {
+      background: #272c34;
+			clip-path: polygon(38% 0%, 75% 0%, 100% 0%);
+    }
+      
+      30% {
+          background: #BDB064;
+				clip-path: polygon(38% 0%, 75% 0%, 80% 50%);
+      }
+	
+	55% {
+		transform: scaleY(.5);
+	}
+      
+      75% {
+          background: #BDB064;
+				transform: scaleY(1);
+      }
+  
+    100% {
+      background: #272c34;
+			clip-path: polygon(38% 0%, 75% 0%, 0% 0%);
+    }
+  }
+
+#leftSide{
+	clip-path: polygon(50% 0%,0% 100%, 70% 100%);
+	animation: pyramid-left 4s cubic-bezier(.46,.01,.54,1) infinite;
+}
+
+#rightSide{
+	background-color: #B7B4B4;
+	clip-path: polygon(50% 0%,100% 100%, 70% 100%);
+	animation: pyramid-left 4s cubic-bezier(.46,.01,.54,1) infinite reverse;
+}
+
+@keyframes dayToNight {
+    0% {
+      background: #272c34;
+    }
+      
+      30% {
+          background: #73cbe5;
+      }
+      
+      70% {
+          background: #73cbe5;
+      }
+  
+    100% {
+      background: #272C34;
+    }
+  }
+
+  @keyframes sunUpDown {
+0% {
+		background: #F57209;
+    transform: rotate(-70deg);
+  }
+	
+	30% {
+		background: #FFEF00;
+		transform: rotate(-28deg);
+	}
+	
+	70% {
+		background: #FFEF00;
+	}
+
+  100% {
+		background: #F57209;
+    transform: rotate(100deg);
+  }
+  }
+
+@keyframes pyramid-left {
+    0% {
+      background: #272c34;
+    }
+      
+      30% {
+          background: #e2dfdf;
+      }
+      
+      75% {
+          background: #B7B4B4;
+      }
+  
+    100% {
+      background: #272c34;
+    }
+  }
+/*I don't know animation yet hehe*/
